@@ -38,7 +38,7 @@ for k = 1:epoch
     pause(timing.t5);                   % wait time between trials
 
     counter = counter + 1;
-    fprintf('Trial %d ]n', counter);
+    fprintf('Trial %d \n', counter);
     toc
 end
 
