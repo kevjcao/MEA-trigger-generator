@@ -32,8 +32,8 @@ while satisfied == false;
         plot(t,trig1,'k')
         axis off
         title('Start new file')
-        text(-3.5, 0.5, sprintf('Deadtime = \n %0.001f s' ,round(deadtime,3)));
-
+        text(-2, 0.5, sprintf('%0.001f s', round(deadtime,3)));
+        text(0, 1.5, '10 ms');
         
         trig2 = rectpuls(t-(deadtime+0.01+window/2),window);
         ax2 = subplot(3,1,2);
@@ -41,16 +41,15 @@ while satisfied == false;
         plot(t,trig2,'k')
         axis off 
         title('Write data to file')
-        text(window + deadtime+0.1, 0.5, sprintf('Window length = \n %0.001f s', window));
-        
+        text(0, 0, sprintf('%0.001f s', window));
+
         trig3 = rectpuls(t-(deadtime+0.01+window/2),stimlength);
         ax3 = subplot(3,1,3);
         plot(t, trig3, 'k')
         axis off
         title('Stimulate with LED')
-        text(-2, 0.5, sprintf('Time to \n stim = \n %0.001f s', deadtime + window/2));
-        text(window/2+1, 0.8, sprintf('Stimulus length = \n %1.0f ms', stimlength*1e3));
-        text(trialtime/2, -0.1, sprintf('Total trial time = %1.0f s', trialtime));
+        text(-2, 0.5, sprintf('%0.001f s', deadtime + window/2));
+        text(window/2, 1.5, sprintf('%0.001f s', stimlength));
         
         linkaxes([ax1, ax2, ax3], 'x')
 
@@ -92,7 +91,8 @@ while satisfied == false;
         plot(t,trig1,'k')
         axis off
         title('Start new file')
-        text(-3.5, 0.5, sprintf('Deadtime = \n %0.001f s' ,round(deadtime,3)));
+        text(-2, 0.5, sprintf('%0.001f s', round(deadtime,3)));
+        text(0, 1.5, '10 ms');
 
         
         trig2 = rectpuls(t-(deadtime+0.01+window/2),window);
@@ -101,17 +101,16 @@ while satisfied == false;
         plot(t,trig2,'k')
         axis off 
         title('Write data to file')
-        text(window + deadtime+0.1, 0.5, sprintf('Window length = \n %0.001f s', window));
+        text(0, 0, sprintf('%0.001f s', window));
         
         trig3 = rectpuls(t-(deadtime+0.01+window/2),stimlength);
         ax3 = subplot(3,1,3);
         plot(t, trig3, 'k')
         axis off
         title('Stimulate with LED')
-        text(-2, 0.5, sprintf('Time to \n stim = \n %0.001f s', deadtime + window/2));
-        text(window/2+1, 0.8, sprintf('Stimulus length = \n %1.0f ms', stimlength*1e3));
-        text(trialtime/2, -0.1, sprintf('Total trial time = %1.0f s', trialtime));
-        
+        text(-2, 0.5, sprintf('%0.001f s', deadtime + window/2));
+        text(window/2+1, 1, sprintf('%f ms', stimlength*1e3));
+
         linkaxes([ax1, ax2, ax3], 'x')
         
         if menu('Are you satisfied with your stimulus design?', 'Yes', 'No') == 1
